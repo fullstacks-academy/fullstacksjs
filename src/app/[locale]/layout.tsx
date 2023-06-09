@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Rajdhani } from 'next/font/google';
 
+import { Header } from '@/components/Header';
+
 const rajdhani = Rajdhani({
   weight: ['500', '600', '700'],
   subsets: ['latin'],
@@ -32,8 +34,8 @@ export default function RootLayout({ children }: Props) {
     >
       <body className="text-base">
         <div className="container flex flex-col gap-24 py-8 mobile:gap-40 tablet:py-40">
-          {/* <Header />
-          <Hero />
+          <Header />
+          {/* <Hero />
           <HeroMobile />
           <Separator /> */}
           {children}

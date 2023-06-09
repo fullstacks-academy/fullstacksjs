@@ -10,26 +10,26 @@ const mapper = {
 };
 
 export default function Home() {
-  const t = useTranslations();
+  const t = useTranslations('main');
 
   return (
     <Articles>
-      <Article title={t('main.about.title')}>
+      <Article title={t('about.title')}>
         <Paragraph>
-          {t.rich('main.about.content', {
+          {t.rich('about.content', {
             mark: (chunk) => <Highlight>{chunk}</Highlight>,
           })}
         </Paragraph>
       </Article>
 
-      <Article title={t('main.motivation.title')}>
-        <Paragraph>{t.rich('main.motivation.content', mapper)}</Paragraph>
+      <Article title={t('motivation.title')}>
+        <Paragraph>{t.rich('motivation.content', mapper)}</Paragraph>
       </Article>
 
-      <Article title={t('main.values.title')}>
-        <Paragraph>{t('main.values.content')}</Paragraph>
-        <Paragraph>{t.rich('main.values.ethics', mapper)}</Paragraph>
-        <Paragraph>{t.rich('main.values.validity', mapper)}</Paragraph>
+      <Article title={t('values.title')}>
+        <Paragraph>{t('values.content')}</Paragraph>
+        <Paragraph>{t.rich('values.ethics', mapper)}</Paragraph>
+        <Paragraph>{t.rich('values.validity', mapper)}</Paragraph>
       </Article>
     </Articles>
   );
