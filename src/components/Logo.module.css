@@ -1,0 +1,24 @@
+.g {
+  transform-origin: center;
+}
+
+.circle-1 {
+  animation: orbit 30s linear infinite;
+}
+
+.circle-2 {
+  animation: orbit 30s linear infinite reverse;
+}
+
+.circle-3 {
+  animation: orbit 30s linear infinite;
+}
+
+@keyframes orbit {
+  from {
+    rotate: 0;
+  }
+  to {
+    rotate: 360deg;
+  }
+}

@@ -41,7 +41,7 @@
   },
   "rules": {
     "title": "FullstacksJS Rules",
-    "desc": "The following behaviors are considered <b>harassment</b> and are <1>unacceptable</1> within our community:",
+    "desc": "The following behaviors are considered <b>harassment</b> and are <b>unacceptable</b> within our community:",
     "items": {
       "violence": "Violence, threats of violence or violent language directed against another person.",
       "name-calling": "<b>Name-calling</b> or calling someone or a group of people with offensive names.",

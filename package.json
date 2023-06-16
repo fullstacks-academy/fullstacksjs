@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@fullstacksjs/eslint-config": "9.5.4",
+    "@svgr/webpack": "8.0.1",
     "prettier": "2.8.8"
   }
 }
