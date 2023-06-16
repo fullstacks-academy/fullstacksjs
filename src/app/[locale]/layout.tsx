@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import { Rajdhani } from 'next/font/google';
+import { getServerSession } from 'next-auth/next';
 
 import { Banner } from '@/components/Banner';
 import { Header } from '@/components/Header';
+
+import { AuthProvider } from './AuthProvider';
 
 const rajdhani = Rajdhani({
   weight: ['500', '600', '700'],
@@ -27,22 +30,26 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: Props) {
+export default async function RootLayout({ children }: Props) {
+  const session = await getServerSession();
+
   return (
     <html
       lang="en"
       className={`${rajdhani.variable} bg-dark-0 leading-normal text-light-0`}
     >
       <body className="text-base">
-        <div className="container flex flex-col gap-24 py-8 mobile:gap-40 tablet:py-40">
-          <Header />
-          <Banner />
-          {/* <HeroMobile />
+        <AuthProvider session={session}>
+          <div className="container flex flex-col gap-24 py-8 mobile:gap-40 tablet:py-40">
+            <Header />
+            <Banner />
+            {/* <HeroMobile />
           <Separator /> */}
-          {children}
-          {/* <Separator />
+            {children}
+            {/* <Separator />
           <Social /> */}
-        </div>
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );
