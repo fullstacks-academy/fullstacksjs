@@ -1,4 +1,7 @@
+import { notFound } from 'next/navigation';
+
 import { getEvents } from '@/data-layer/getEvents';
+import { feature } from '@/features';
 
 import EventsContent from './EventContent';
 
@@ -13,6 +16,8 @@ export interface Lecturer {
 }
 
 export default async function EventsPage() {
+  if (feature.includes('events')) notFound();
+
   const events = await getEvents();
 
   const upcomingEvents = events.filter((event) => event.date > new Date());
